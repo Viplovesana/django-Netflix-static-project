@@ -1,0 +1,201 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link rel="stylesheet" href="{% static 'style.css' %}">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <title>
+    {% block title %}
+    NETFLIX
+    {% endblock %}
+    </title>
+  </head>
+  <body>
+{% if data  %}
+     <nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container-fluid">
+   
+    <a class="navbar-brand" href="#">
+    <img src="{% static 'images/Netflix_2015_logo.svg' %}" alt="Netflix" height="23">
+</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'tvshow' %}">TV Shows</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'movies' %}">Movies</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'games' %}">Games</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'popular' %}">New & Popular</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'mylist' %}">My List</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'browse' %}">Browse by Langauges</a>
+        </li>
+      </ul>
+
+        <div>
+       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
+        </li>
+      
+        </ul>
+        </div>
+      
+    </div>
+  </div>
+</nav> 
+ 
+{% else %}
+     <nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container-fluid">
+   
+    <a class="navbar-brand" href="#">
+    <img src="{% static 'images/Netflix_2015_logo.svg' %}" alt="Netflix" height="23">
+</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'tvshow' %}">TV Shows</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'movies' %}">Movies</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'games' %}">Games</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'popular' %}">New & Popular</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'mylist' %}">My List</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'browse' %}">Browse by Langauges</a>
+        </li>
+      </ul>
+
+        <div>
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'register' %}">Register</a>
+        </li> 
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
+        </li>
+      
+        </ul>
+        </div>
+      
+    </div>
+  </div>
+</nav> 
+{% endif %}
+
+{% block content %}
+
+{% endblock %}
+
+<!-- Footer Start -->
+<footer class="text-white pt-4 pb-2 mt-5 footer-black">
+  <div class="container text-center text-md-start footer-div">
+    <div class="row footer-flex">
+      <!-- About -->
+      <div class="col-md-3 mb-4 custom-footer-col">
+        <h6 class="text-uppercase fw-bold">Netflix Clone</h6>
+        <p class="para">Watch your favorite shows and movies anytime, anywhere.</p>
+      </div>
+
+      <!-- Links -->
+      <div class="col-md-2 mb-4 custom-footer-col">
+        <h6 class="text-uppercase fw-bold">Browse</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class=" text-decoration-none">Movies</a></li>
+          <li><a href="#" class=" text-decoration-none">TV Shows</a></li>
+          <li><a href="#" class=" text-decoration-none">New & Popular</a></li>
+          <li><a href="#" class=" text-decoration-none">My List</a></li>
+        </ul>
+      </div>
+
+      <!-- Help -->
+      <div class="col-md-2 mb-4 custom-footer-col" >
+        <h6 class="text-uppercase fw-bold">Help</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-decoration-none">FAQ</a></li>
+          <li><a href="#" class="text-decoration-none">Account</a></li>
+          <li><a href="#" class="text-decoration-none">Privacy</a></li>
+          <li><a href="#" class="text-decoration-none">Speed Test</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-3 mb-4 custom-footer-col">
+        <h6 class="text-uppercase fw-bold">Contact</h6>
+        <p class="para">Email: support@netflixclone.com</p>
+        <p class="para">Phone: +91-123-456-7890</p>
+        <div>
+          <a href="#" class="text-white me-3 icon"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-3 icon"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-white icon"><i class="bi bi-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center mt-3 border-top pt-3">
+      <p class="para">&copy; 2025 Netflix Clone. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+<!-- Footer End -->
+
+
+
+
+
+
+
+<!-- Footer End -->
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+   
+  </body>
+</html>

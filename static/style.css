@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.custom-navbar{
+    background-color:#141414 ;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 11px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+
+
+    
+}
+.custom-navbar .nav-link {
+    color: white;
+    font-weight:100;
+    font-size: 13px;
+  
+
+}
+.custom-navbar .navbar-collapse{
+  margin-left: 20px;
+}
+.navbar-brand img{
+  margin-left: 30px;
+
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+}
+.navbar-toggler {
+  border-color: white; 
+  color: white;
+}
+
+
+
+  body {
+      background-color: #141414;
+      color: white;
+    }
+    .card {
+      background-color: #1f1f1f;
+      border: none;
+      color: white;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+
+
+/* ......................................................................................... */
+.footer-flex{
+  display: flex;
+  justify-content: center;
+
+}
+a {
+  color: rgb(144, 144, 144);
+  font-size: 13px;
+}
+.footer-black{
+  background-color: black;
+}
+.para{
+    color: rgb(144, 144, 144);
+     font-size: 13px;
+}
+.icon{
+  font-size: 23px;
+}
+.list{
+  font-size: 20px;
+}
+.row-one{
+  width: 300px;
+  height: 155px;
+}
+.card-title{
+  font-size: 13px;
+ position: absolute;
+ top: 100px;
+ left: 30px;
+}
+.btn-btn{
+   position: absolute;
+ top: 120px;
+ right: -1px;
+ font-size: 10px;
+}
+
+.card-row{
+      width: 99%;
+    max-width: 100%;
+    margin: auto;
+}
+.card3-row{
+      width: 99%;
+    max-width: 100%;
+    margin: auto;
+}
+.list{
+  margin-left: 0px;
+}
