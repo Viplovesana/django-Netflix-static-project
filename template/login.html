@@ -6,19 +6,49 @@ login page
 
 {% block content %}
 <h1>this is my login page</h1>
-<form action="{% url 'logindata' %}" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-{{msg}}
-{{alert}}
-<br>
-<label>Email-</label>
-<input type="email" name="email">
-<br>
-<label>Password-</label>
-<input type="password" name=password>
-<br>
-<input type="submit" value="Login">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="card shadow">
+          <div class="card-header bg-dark text-white text-center">
+            <h4>Login</h4>
+          </div>
+          <div class="card-body">
 
-</form>
+            <form action="{% url 'logindata' %}" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+
+              {% if msg %}
+              <div class="alert alert-success">{{ msg }}</div>
+              {% endif %}
+              
+              {% if alert %}
+              <div class="alert alert-danger">{{ alert }}</div>
+              {% endif %}
+
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control bg-dark text-white border-secondary" id="email" required>
+              </div>
+
+              <!-- Password -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control bg-dark text-white border-secondary" id="password" required>
+              </div>
+
+              <!-- Submit -->
+              <div class="d-grid">
+                <button type="submit" class="btn btn-danger">Login</button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endblock %}

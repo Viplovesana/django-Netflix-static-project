@@ -5,34 +5,64 @@ register page
 {% endblock  %}
 
 {% block content %}
-<h1>this is my register page</h1>
-<form method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
-   
-    {% csrf_token %}
-    {{email}}
-    {{alert}}
-    {{pwd}}<br>
-    <label>UserName</label>
-    <input type="text" name="username" required><br>
- 
-    <label>Email</label>
-    <input type="email" name="email" required><br>
-    
-    <label>Password</label>
-    <input type="password" name="password" required> <br> 
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow">
+          <div class="card-header bg-dark text-white text-center">
+            <h4>Register</h4>
+          </div>
+          <div class="card-body">
 
-    <label>ConfirmPass</label>
-    <input type="password" name="confirmpass" required>  <br>   
+            <form method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
+              {% csrf_token %}
 
-    <label>Subscription</label>
-    <select name="subscription" required >
-     <option> Price/Month</option>
-     <option value="Mobile">149</option>
-     <option value="Basic">199</option>
-    <option value="Standard">499</option>
-      <option value="Primium">649</option>
-    </select> <br>       
-    
-    <input type="submit" value="Register">
-</form>
+              <!-- Username -->
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control bg-dark text-white border-secondary dark-black" name="username" id="username" required>
+              </div>
+
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control bg-dark text-white border-secondary dark-black" name="email" id="email" required>
+              </div>
+
+              <!-- Password -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control bg-dark text-white border-secondary dark-black" name="password" id="password" required>
+              </div>
+
+              <!-- Confirm Password -->
+              <div class="mb-3">
+                <label for="confirmpass" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control bg-dark text-white border-secondary dark-black" name="confirmpass" id="confirmpass" required>
+              </div>
+
+              <!-- Subscription -->
+              <div class="mb-3">
+                <label for="subscription" class="form-label">Subscription</label>
+                <select class="form-select bg-dark text-white border-secondary" name="subscription" id="subscription" required>
+                  <option disabled selected>Select a Plan</option>
+                  <option value="Mobile">Mobile - ₹149/month</option>
+                  <option value="Basic">Basic - ₹199/month</option>
+                  <option value="Standard">Standard - ₹499/month</option>
+                  <option value="Premium">Premium - ₹649/month</option>
+                </select>
+              </div>
+
+              <!-- Submit -->
+              <div class="d-grid">
+                <button type="submit" class="btn btn-danger">Register</button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
